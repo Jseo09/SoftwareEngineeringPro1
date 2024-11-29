@@ -29,7 +29,7 @@ public class ErrorManager {
             }
 
             // Check for missing semicolon
-            if (!line.endsWith(";") && !line.endsWith("{") && !line.endsWith("}") && !line.isBlank() && line.endsWith(")")) {
+            if (!line.endsWith(";") && !line.endsWith("{") && !line.endsWith("}") && !line.isBlank() && !line.endsWith(")") && line.startsWith("'\\\\'")) {
                 errors.append("Error: Missing semicolon at line ").append(lineCount).append("\n");
             }
         }
