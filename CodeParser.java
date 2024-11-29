@@ -1,4 +1,4 @@
-package SoftwareEngineeringPro1;
+
 public class CodeParser {
 
     private String code;
@@ -25,7 +25,7 @@ public class CodeParser {
             }
 
             // Detect if/else conditions
-            if (line.startsWith("if") || line.contains("else")) {
+            if (line.startsWith("if")) {
                 ifCount++;
                 nestedConditionLevel++;
                 maxNestedConditionLevel = Math.max(maxNestedConditionLevel, nestedConditionLevel);
