@@ -1,5 +1,3 @@
-package SoftwareEngineeringPro1;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +33,9 @@ public class ControlFlowGenerator {
                 loopCount++;
                 flowchartPanel.addComponent("Loops");
             }
-            else if (line.contains("Scanner") || line.contains("args")) {
+            else if (line.contains("input.nextLine();")) {
                 inputCount++;
-                //flowchartPanel.addComponent("If/Else");
+                flowchartPanel.addComponent("Input");
             }
             else if (line.contains("System.out.println")) {
                 outputCount++;
@@ -58,7 +56,9 @@ public class ControlFlowGenerator {
                 flowchartPanel.addComponent("Comparisons");
 
             }
-            if ((line.contains("+") || line.contains("-") || line.contains("*") || line.contains("/")) && !insidePrint) {
+             if ((line.contains("+") || line.contains("-") || line.contains("*") || line.contains("/")) || line.contains("Math.sqrt") || line.contains("Math.sqrt") || 
+            line.contains("Math.PI") || line.contains("Math.pow") || line.contains("Math.sin") || line.contains("Math.ceil") || line.contains("Math.floor") ||
+             line.contains("Math.round") || line.contains("%")) {
                 operationCount++;
                 flowchartPanel.addComponent("Arithmetic");
             }
